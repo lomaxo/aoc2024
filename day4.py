@@ -9,11 +9,11 @@ SAXAMASAAA
 MAMMMXMMMM
 MXMXAXMASX'''
 
-# with open("input/day4.txt") as file:
-    #  data = file.read()
+with open("input/day4.txt") as file:
+     data = file.read()
 
 grid = data.split('\n')
-# grid = grid[:-1]
+grid = grid[:-1]
 
 def search_xmas(grid: list[list], x, y, xdir, ydir):
     word = ''
@@ -53,30 +53,12 @@ def search_mas(grid: list[list], x, y, xdir, ydir):
     return  1 if word == "MAS" else 0 
 
 def search_x(grid: list[list], x, y, xdir, ydir):
-    found = 0
-    found += search_mas(grid, x, y, xdir, ydir):
-    found += search_mas(grid, x, y, ydir, -xdir)
-    found += search_mas(grid, x, y, -ydir, xdir)
-
-    if found == 2:
-         return 1
-    return 0
+    return (search_mas(grid, x, y, xdir, ydir) and search_mas(grid, x, y, ydir, -xdir)) or search_mas(grid, x, y, xdir, ydir) and search_mas(grid, x, y, -ydir, xdir)
 
 found = 0
 for y in range(len(grid)):
     for x in range(len(grid[0])):
         if grid[y][x] == 'A':
-            # print(grid[y][x]
-                      
-            found += search_x(grid, x, y, 1, 0)
             found += search_x(grid, x, y, 1, 1)
-            found += search_x(grid, x, y, -1, 0)
             found += search_x(grid, x, y, -1, -1)
-
-            # found += search_x(grid, x, y, -1, 0)
-            # found += search_x(grid, x, y, 0, 1)
-            # found += search_x(grid, x, y, 0, -1)
-            # found += search_x(grid, x, y, -1, -1)
-            # found += search_x(grid, x, y, 1, -1)
-            # found += search_x(grid, x, y, -1, 1)
 print(f"Found X-MAS {found} times")
