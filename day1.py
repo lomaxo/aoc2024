@@ -5,12 +5,12 @@ data = """3   4
 3   9
 3   3"""
 
-with open("input/day1.txt") as file:
-    lines = file.readlines()
+# with open("input/day1.txt") as file:
+#     lines = file.readlines()
 
 
-# lines = data.split("\n")
-# print(lines)
+lines = data.split("\n")
+print(lines)
 
 list1 = []
 list2 = []
@@ -28,9 +28,9 @@ for pairs in zip(slist1, slist2):
 
 print(f"Total distance = {distance}")
 
-similarity = 0
-for pairs in zip(list1, list2):
-    # print(pairs[0], list2.count(pairs[0]),pairs[0] * list2.count(pairs[0]))
-    similarity += pairs[0] * list2.count(pairs[0])
+# similarity = 0
+# for pairs in zip(list1, list2):
+#     # print(pairs[0], list2.count(pairs[0]),pairs[0] * list2.count(pairs[0]))
+#     similarity += pairs[0] * list2.count(pairs[0])
 
-print(f"Total similarity = {similarity}")
+# print(f"Total similarity = {similarity}")
