@@ -6,3 +6,4 @@
 - Day 5: Tried brute forcing part 2 but that was too slow. Ended up sorting using a custom comparison function.
 - Day 6: Part one pretty straightforward. Part two not done...brute force?!
 - Day 7: Pretty straightforward. Had to reverse the operands to make my recursive solution apply from left to right. part 2 was a trivial addition. It's a bit slow though. Could maybe be optimized.
+- Day 8: Part 1 was fine. Part 2 should have been relatively easy but took a bit of thinking about.
