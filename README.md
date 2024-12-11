@@ -9,5 +9,5 @@
 - Day 8: Part 1 was fine. Part 2 should have been relatively easy but took a bit of thinking about.
 - Day 9: Part 1 was no problem. Ran out of time for part 2. Seems easy in principle but fiddly to get right.
 - Day 10: Part 1 was a nice recursive function. Part 2, also fine once I'd worked out that lists aren't hashable, but tuples are, and that I needed to copy the list.
-:
+- Day 11: Took a while for find a way of optimizing for part 2. Tried creating a linked list to make insertions faster but that didn't work. Tried to implement my own memoisation but also didn't work for some reason so used functools @cache decorator.
 
