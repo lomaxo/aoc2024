@@ -1,6 +1,3 @@
-from functools import cache
-
-
 data = '''0 1 10 99 999'''
 data = "125 17"
 
@@ -33,26 +30,30 @@ print(f"Number of stones after {N} iterations = {len(stones)}")
 
 # Part 2
 
-@cache
+memo = {}
 def count_stones(stone, depth):
+    if (stone,depth) in memo:
+        return memo[(stone,depth)]
+
     if depth == 0:
         return 1
 
     if stone == 0:
-        return count_stones(1, depth-1)
+        count = count_stones(1, depth-1)
     elif len(str(stone)) % 2 == 0:
         stone_str = str(stone)
         mid = len(stone_str)//2
-        return count_stones(int(stone_str[:mid]), depth-1) + count_stones(int(stone_str[mid:]), depth-1)
+        count = count_stones(int(stone_str[:mid]), depth-1) + count_stones(int(stone_str[mid:]), depth-1)
     else:
-        return count_stones(stone * 2024, depth-1)
+        count = count_stones(stone * 2024, depth-1)
 
-    # return count
+    memo[(stone, depth)] = count
+    return count
 
 depth = 75
 # stones = [125,17]
 stones = [int(n) for n in data.split()]
 count = sum([count_stones(stone, depth) for stone in stones])
 
-print(f"Number of stones after {N} iterations = {count}")
+print(f"Number of stones after {depth} iterations = {count}")
 
