@@ -11,4 +11,5 @@
 - Day 10: Part 1 was a nice recursive function. Part 2, also fine once I'd worked out that lists aren't hashable, but tuples are, and that I needed to copy the list.
 - Day 11: Took a while for find a way of optimizing for part 2. Tried creating a linked list to make insertions faster but that didn't work. Tried to implement my own memoisation but also didn't work for some reason so used functools @cache decorator.
 Update: Just added my on memoisation and it worked fine. Not sure what I'd done wrong before.
+- Day 12: Part 1 was a nice problem; I'm happy with the algorithm. Part 2 will require some more thinking
 
